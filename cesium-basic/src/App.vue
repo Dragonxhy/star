@@ -7,7 +7,19 @@ import {onMounted} from "vue";
 window.CESIUM_BASE_URL = "/";
 
 onMounted(()=>{
-  var viewer=new Cesium.Viewer("cesiumContainer");
+  var viewer=new Cesium.Viewer("cesiumContainer",{
+    homeButton : false,//地图导航
+    infoBox: false,//信息框
+    sceneModePicker: false,//场景切换
+    baseLayerPicker:false,//底图切换
+    navigationHelpButton:false,//帮助
+    geocoder:false,//地理搜索
+    animation:false,//动画
+    timeline:false,//时间线
+    fullscreenButton:false//全屏
+  });
+  //隐藏logo
+  viewer.cesiumWidget.creditContainer.style.display="none";
 });
 </script>
 
